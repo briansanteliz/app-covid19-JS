@@ -1,98 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Eventos</title>
-     <link rel="stylesheet" href="css/bootstrap.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
-        <a class="navbar-brand" href="#"><span class="text-center">Buscador Eventos</span></a>
-    </nav> 
-     <div class="container buscador">
-               <div id="buscador" class=" card card-body">
-                   <h1 class="text-center">Busca Eventos de tu interés o en tu ciudad</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Eventos</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="container buscador col-md-9">
+        <div id="buscador" class="card card-body">
+          <h3 class="text-center">
+            Consulta las Estadísticas del
+            <span style="color: rgb(218, 59, 73);">Covid-19</span> de Cada País
+          </h3>
+          <div class="container container-fluid">
+            <div
+              class="thevirustracker-widget"
+              data-ccountryid="ALL"
+              data-base="ALLDATA"
+            ></div>
+          </div>
+          <div class="form-group mt-3">
+            <select class="form-control" id="listado-paises">
+              <option value="" disabled selected>Selecciona un Pais</option>
+            </select>
+          </div>
 
-                   <div class="form-group">
-                        <label for="exampleSelect1">Buscar por Nombre o Ciudad</label>
-                        <input type="text" id="evento" class="form-control" placeholder="Busca por nombre de evento, banda o cantante"> 
-                    </div>
-                     
-                   <div class="form-group">
-                        <label for="exampleSelect1">Categoría Evento</label>
-                        <select class="form-control" id="listado-categorias">
-                            <option value="" disabled selected>Elige tu Categoria </option>
-                        </select>
-                    </div>
+          <input
+            type="submit"
+            class="mt-2 form-control btn btn-success"
+            id="buscarBtn"
+            value="Buscar"
+          />
+          <div class="spinner mt-5">
+            <div class="sk-chase">
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+            </div>
+          </div>
+          <div id="resultado" class="row mt-5"></div>
+        </div>
+      </div>
+    </div>
 
-
-                   <input type="submit" class="mt-5 form-control btn btn-success" id="buscarBtn" value="Buscar">
-               </div>  
-               <div id="resultado-eventos" class="row mt-5">
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <h3 class="card-header mb-3 text-center ">Evento:</h3>
-                            <div class="card-body">
-                            <img class="img-fluid mb-2" src="../criptomonedas/doc/app.png"> 
-                                <div clas="card-text">
-                                    <h2 clas="text-center">
-                                    Evento
-                                    </h2>
-                                    <p class=" lead text-center text-info">
-                                    Informacion del evento
-                                    </p>
-                                    <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, inventore.</p>
-                                        <span style=" display:flex; justify-content: space-between"> 
-                                            <span class="badge badge-primary badge-pill">Capacidad: 100</span>  
-                                            <span class="badge badge-secondary badge-pill">Fecha y hora: 10:00 AM</span>  
-                                        </span>
-                                        <a class="btn btn-primary btn-block mt-4" href="#" target="_blank">Comprar Boletos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <h3 class="card-header mb-3 text-center ">Evento:</h3>
-                            <div class="card-body">
-                            <img class="img-fluid mb-2" src="../criptomonedas/doc/app.png"> 
-                                <div clas="card-text">
-                                    <h2 clas="text-center">
-                                    Evento
-                                    </h2>
-                                    <p class=" lead text-center text-info">
-                                    Informacion del evento
-                                    </p>
-                                    <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, inventore.</p>
-                                        <span style=" display:flex; justify-content: space-between"> 
-                                            <span class="badge badge-primary badge-pill">Capacidad: 100</span>  
-                                            <span class="badge badge-secondary badge-pill">Fecha y hora: 10:00 AM</span>  
-                                        </span>
-                                        <a class="btn btn-primary btn-block mt-4" href="#" target="_blank">Comprar Boletos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-           </div>
-       
-           <footer class="mt-5 p-3 text-center bg-primary">
-               Buscador de Eventos &copy;
-           </footer>
-       
-          <script src="js/eventbrite.js"></script>
-          <script src="js/interfaz.js"></script>
-          <script src="js/app.js"></script>
-           <style>
-                .texto-info {
-                   font-weight: bold;
-                   margin-top: 30px;
-                }
-                footer {
-                     color: white;
-                }
-           </style>
-</body>
+    <script src="js/api.js"></script>
+    <script src="js/interfaz.js"></script>
+    <script src="js/app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://embed.thevirustracker.com/embed.js"
+    ></script>
+  </body>
 </html>
