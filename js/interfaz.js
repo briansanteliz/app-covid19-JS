@@ -55,6 +55,7 @@ export class Interfaz {
           <h1 style="color:#3aa969">${total_recovered}</h1>
           <h4>Recuperados</h4>
       </div>
+      <hr style="width:100%" />
       <div class="col-md-4 mt-3 text-center">
           <h1 style="color:#1877f2">${total_new_cases_today}</h1>
           <h4> Casos Nuevos Hoy</h4>
@@ -67,6 +68,7 @@ export class Interfaz {
           <h1 style="color:#fb9c38">${total_serious_cases}</h1>
           <h4>Casos Graves</h4>
       </div>
+      <hr style="width:100%" />
       <div class="col-md-4 text-center total">
           <h1>Top<span class="top" style="color:${color}">°${total_danger_rank}</span></h1>
           <h4>Rango De Peligro</h4>
