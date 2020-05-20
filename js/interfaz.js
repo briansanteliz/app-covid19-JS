@@ -1,4 +1,6 @@
-class Interfaz {
+import {Api } from './api.js'
+const api = new Api()
+export class Interfaz {
   constructor() {
     this.init();
     this.listado = document.getElementById("listado-paises");

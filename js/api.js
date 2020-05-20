@@ -1,4 +1,4 @@
-class Api {
+export class Api {
   async obtenerPaises() {
     const url = "https://api.thevirustracker.com/free-api?countryTotals=ALL";
     const res = await fetch(url);

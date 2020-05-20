@@ -10,6 +10,9 @@ h1 {
   font-variant: normal;
   font-weight: 700;
 }
+.btn {
+  border-radius: 40px;
+}
 .total {
   margin: auto;
   margin-top: 5px;
