@@ -1,6 +1,6 @@
 # app-covid19-JS
 
-Esta app te permite consultar las estadisticas de cada país y el avance con respecto al virus del Covid-19. :mask: 
+Esta app te permite consultar las estadísticas de cada país y el avance con respecto al virus del Covid-19. :mask: 
 Filtrando los resultados por:
 
 * Datos Generales:
@@ -19,3 +19,4 @@ Filtrando los resultados por:
   * [Bootswatch](https://bootswatch.com/)
   * Clases en JS
 
+![AppScreenShot](/doc/appss.png)
